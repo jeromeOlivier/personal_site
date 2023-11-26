@@ -1,40 +1,71 @@
+@font-face {
+    font-family: 'rMed';
+    src: url(fonts/readexpro-medium-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rBold';
+    src: url(fonts/readexpro-bold-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 body {
-  margin: 0;
-  padding: 2rem;
-  background-color: hsl(250, 24%, 9%);
-  color: hsl(0, 0%, 100%);
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+@media (prefers-color-scheme: dark) {
+    .card  { background: #bbb; color: #444; }
+    body { background: #444; }
 }
 
-h1 {
-  font-size: 48px;
-  margin: 1rem 0;
+@media (prefers-color-scheme: light) {
+    .card  { background: #666; color: #ddd; }
+    body { background: #ddd; }
 }
 
-.logo {
-  width: 8rem;
-  height: 8rem;
-  margin-bottom: 2rem;
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: rMed, sans-serif;
+
+    height: 40vh;
+    width: 38vh;
+
+    user-select: none;
+    -webkit-user-select: none;
+    transform: rotate(10deg);
+    clip-path: polygon(100% 0%, 120% 100%, 0% 80%, 0% 10%);
 }
 
-p {
-  line-height: 1.6;
+.first {
+    transform: rotate(-20deg);
+    margin: 1vh 0 0;
+    font-size: 6.5vh;
 }
 
-a {
-  color: hsl(270, 70%, 65%);
-  text-decoration: none;
+.second {
+    transform: rotate(-5deg);
+    margin: 1vh 5vh 0 0;
+    font-size: 4vh;
 }
 
-a:hover {
-  text-decoration: underline;
+.third {
+    font-family: rBold, sans-serif;
+    transform: rotate(15deg);
+    margin: .7vh 12vh 0 0;
+    font-size: 2vh;
 }
